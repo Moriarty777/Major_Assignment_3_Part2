@@ -73,7 +73,7 @@
             .enter()
             .append('g')
             .attr("class", function (d){
-                return `node ${treatPublisherClass(d.Year)}`
+                return `node ${treatPublisherClass(d.Country)}`
             })
 
 
@@ -85,9 +85,9 @@
                 else{
                     return scale_radius(0)
                 }
-            }).attr("fill",d=>color(d.Year))
+            }).attr("fill",d=>color(d.Country))
         let label = node_elements.append("text")
-            .text(function(d) {  return `${d.Title}  (${d.Year})`; });
+            .text(function(d) {  return `(${d.Country})`; });
 
         let ForceSimulation=d3.forceSimulation(data.nodes)
             .force("collide",
